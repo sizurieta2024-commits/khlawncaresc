@@ -248,3 +248,8 @@
   .svc-list span { color: var(--ink-soft); font-size: 15.5px; }
   .sms-alt { margin: 0; font-size: 14px; color: var(--ink-soft); }
   .sms-alt a { font-weight: 700; color: var(--leaf); }
+  /* Flyer graphics */
+  .flyers { display: grid; gap: 22px; }
+  @media (min-width: 900px) { .flyers { grid-template-columns: 1.45fr 1fr; align-items: start; } }
+  .flyers figure { margin: 0; border: 3px solid var(--ink); border-radius: 10px; overflow: hidden; background: var(--cream); box-shadow: 6px 6px 0 var(--ink); }
+  .flyers img { display: block; width: 100%; height: auto; }
