@@ -9,6 +9,8 @@
 <meta property="og:description" content="Ten services, one crew, free estimates. Call 843-598-9624.">
 <link rel="canonical" href="https://khlawncaresc.com/">
 <meta property="og:url" content="https://khlawncaresc.com/">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18496325629"></script>
+<script src="assets/track.js"></script>
 <meta name="theme-color" content="#12351d">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -401,7 +403,8 @@
       String(data.get('details') || '').trim() ? `Details: ${String(data.get('details')).trim()}` : '',
     ].filter(Boolean);
     note.textContent = 'Opening your text messages. Just press send. On a computer? Call 843-598-9624.';
-    window.location.href = 'sms:+18435989624?&body=' + encodeURIComponent(lines.join('\n'));
+    const smsUrl = 'sms:+18435989624?&body=' + encodeURIComponent(lines.join('\n'));
+    if (window.khReportEstimate) window.khReportEstimate(smsUrl); else window.location.href = smsUrl;
   });
 
   const io = new IntersectionObserver((entries) => entries.forEach((entry) => {
