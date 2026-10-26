@@ -1,4 +1,4 @@
-// Google Ads conversion tracking for khlawncaresc.com.
+// Google Ads and Meta Pixel conversion tracking for khlawncaresc.com.
 // Counts phone-number taps, "Text us" taps and estimate-form requests.
 window.dataLayer = window.dataLayer || [];
 function gtag() {
@@ -7,11 +7,37 @@ function gtag() {
 gtag("js", new Date());
 gtag("config", "AW-18496325629");
 
+// Meta Pixel base code (K&H Lawn Care Website Pixel).
+!(function (f, b, e, v, n, t, s) {
+  if (f.fbq) return;
+  n = f.fbq = function () {
+    n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+  };
+  if (!f._fbq) f._fbq = n;
+  n.push = n;
+  n.loaded = !0;
+  n.version = "2.0";
+  n.queue = [];
+  t = b.createElement(e);
+  t.async = !0;
+  t.src = v;
+  s = b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t, s);
+})(
+  window,
+  document,
+  "script",
+  "https://connect.facebook.net/en_US/fbevents.js",
+);
+fbq("init", "2580736425683116");
+fbq("track", "PageView");
+
 (function () {
   var CALL_CLICK = "AW-18496325629/g6iUCPn5jacdEP2P3vNE";
   var ESTIMATE = "AW-18496325629/Gg3SCPb5jacdEP2P3vNE";
 
   function report(sendTo, callback) {
+    fbq("track", sendTo === CALL_CLICK ? "Contact" : "Lead");
     gtag("event", "conversion", {
       send_to: sendTo,
       value: 1.0,
