@@ -7,36 +7,52 @@ function gtag() {
 gtag("js", new Date());
 gtag("config", "AW-18496325629");
 
-// Meta Pixel base code (K&H Lawn Care Website Pixel).
-!(function (f, b, e, v, n, t, s) {
+// Meta Pixel base code (K&H Lawn Care Website Pixel). Calls are queued until the
+// library loads, so nothing is lost while it is deferred.
+!(function (f) {
   if (f.fbq) return;
-  n = f.fbq = function () {
+  var n = (f.fbq = function () {
     n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
-  };
+  });
   if (!f._fbq) f._fbq = n;
   n.push = n;
   n.loaded = !0;
   n.version = "2.0";
   n.queue = [];
-  t = b.createElement(e);
-  t.async = !0;
-  t.src = v;
-  s = b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t, s);
-})(
-  window,
-  document,
-  "script",
-  "https://connect.facebook.net/en_US/fbevents.js",
-);
+})(window);
 fbq("init", "2580736425683116");
 fbq("track", "PageView");
+
+// The Google tag and Pixel libraries are heavy and block the page while it renders.
+// Load them on the visitor's first interaction, or shortly after the page has loaded.
+var loadTrackers = (function () {
+  var done = false;
+  function addScript(src) {
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = src;
+    document.head.appendChild(s);
+  }
+  return function () {
+    if (done) return;
+    done = true;
+    addScript("https://www.googletagmanager.com/gtag/js?id=AW-18496325629");
+    addScript("https://connect.facebook.net/en_US/fbevents.js");
+  };
+})();
+["pointerdown", "keydown", "scroll", "touchstart"].forEach(function (type) {
+  window.addEventListener(type, loadTrackers, { once: true, passive: true });
+});
+window.addEventListener("load", function () {
+  setTimeout(loadTrackers, 3500);
+});
 
 (function () {
   var CALL_CLICK = "AW-18496325629/g6iUCPn5jacdEP2P3vNE";
   var ESTIMATE = "AW-18496325629/Gg3SCPb5jacdEP2P3vNE";
 
   function report(sendTo, callback) {
+    loadTrackers();
     fbq("track", sendTo === CALL_CLICK ? "Contact" : "Lead");
     gtag("event", "conversion", {
       send_to: sendTo,
