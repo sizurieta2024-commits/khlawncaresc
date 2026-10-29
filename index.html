@@ -18,13 +18,199 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "HomeAndConstructionBusiness",
-  "name": "K&H Lawn Care LLC",
-  "telephone": "+1-843-598-9624",
-  "address": { "@type": "PostalAddress", "addressLocality": "Lake City", "addressRegion": "SC", "addressCountry": "US" },
-  "url": "https://khlawncaresc.com/",
-  "areaServed": ["Lake City, SC", "Florence, SC", "Kingstree, SC", "Johnsonville, SC", "Hemingway, SC", "Scranton, SC", "Olanta, SC", "Timmonsville, SC", "Manning, SC", "Sumter, SC", "Marion, SC", "Darlington, SC"],
-  "makesOffer": ["Lawn Care", "Junk Removal", "Local Moving", "Handyman", "Roof Installation & Replacement", "Floor Installation & Replacement", "HVAC Services", "Pressure Washing", "Construction Services", "Demolition Services"]
+  "@graph": [
+    {
+      "@type": "HomeAndConstructionBusiness",
+      "@id": "https://khlawncaresc.com/#business",
+      "name": "K&H Lawn Care LLC",
+      "description": "Locally owned lawn care, junk removal, pressure washing, moving, handyman and home improvement company based in Lake City, South Carolina, serving towns within about 50 miles.",
+      "url": "https://khlawncaresc.com/",
+      "telephone": "+1-843-598-9624",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lake City",
+        "addressRegion": "SC",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Lake City, SC"
+        },
+        {
+          "@type": "City",
+          "name": "Florence, SC"
+        },
+        {
+          "@type": "City",
+          "name": "Kingstree, SC"
+        },
+        {
+          "@type": "City",
+          "name": "Johnsonville, SC"
+        },
+        {
+          "@type": "City",
+          "name": "Hemingway, SC"
+        },
+        {
+          "@type": "City",
+          "name": "Scranton, SC"
+        },
+        {
+          "@type": "City",
+          "name": "Olanta, SC"
+        },
+        {
+          "@type": "City",
+          "name": "Timmonsville, SC"
+        },
+        {
+          "@type": "City",
+          "name": "Manning, SC"
+        },
+        {
+          "@type": "City",
+          "name": "Sumter, SC"
+        },
+        {
+          "@type": "City",
+          "name": "Marion, SC"
+        },
+        {
+          "@type": "City",
+          "name": "Darlington, SC"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/profile.php?id=61596046041411"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Lawn Care",
+              "description": "Mowing, edging, trimming and yard cleanups."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Pressure Washing",
+              "description": "Driveways, siding, decks and walkways cleaned up."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Junk Removal",
+              "description": "Furniture, appliances, debris and cleanouts hauled away."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Local Moving",
+              "description": "Loading, hauling and unloading for local moves."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Demolition Services",
+              "description": "Sheds, structures and interiors taken down and cleared."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Handyman",
+              "description": "Repairs and odd jobs around the house."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Roof Installation & Replacement",
+              "description": "New roofs and full roof replacements."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Floor Installation & Replacement",
+              "description": "New floors put in, worn floors replaced."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "HVAC Services",
+              "description": "Heating and cooling service for your home."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Construction Services",
+              "description": "Building and remodeling work for your property."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://khlawncaresc.com/#website",
+      "url": "https://khlawncaresc.com/",
+      "name": "K&H Lawn Care LLC",
+      "publisher": {
+        "@id": "https://khlawncaresc.com/#business"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What area do you cover?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We are based in Lake City, SC and work in towns within about 50 miles, including Florence, Kingstree, Johnsonville, Manning, Sumter, Marion and Darlington. Not sure if we come to you? Call and ask."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I get more than one job done?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Pick every service you need and we will price it all in one estimate."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the fastest way to reach you?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Call 843-598-9624. You can also send the request form on the website and we will get back to you."
+          }
+        }
+      ]
+    }
+  ]
 }
 </script>
 <link rel="stylesheet" href="assets/site.css">
