@@ -6,6 +6,8 @@ function gtag() {
 }
 gtag("js", new Date());
 gtag("config", "AW-18496325629");
+// Google Analytics 4 (visitor counts for the monthly report).
+gtag("config", "G-ZWXWZ7HJJD");
 
 // Meta Pixel base code (K&H Lawn Care Website Pixel). Calls are queued until the
 // library loads, so nothing is lost while it is deferred.
