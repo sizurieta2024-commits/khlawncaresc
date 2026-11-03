@@ -1180,3 +1180,55 @@ footer a {
   font-weight: 600;
   border-top: 2px solid var(--ink);
 }
+/* Fall & winter services */
+.fall {
+  background: var(--cream-2);
+}
+.fall-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr));
+}
+.fall-grid li {
+  padding: 18px 18px 20px;
+  border: 2px solid var(--ink);
+  border-top: 6px solid var(--gold-deep);
+  border-radius: 8px;
+  background: var(--cream);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.fall-grid h3 {
+  margin: 0 0 4px;
+  font-size: 19px;
+  font-weight: 700;
+}
+.fall-grid p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 15.5px;
+}
+.fall-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 18px;
+  margin-top: clamp(26px, 4vw, 38px);
+}
+.fall-cta .btn-line {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+.fall-cta .btn-line:hover {
+  background: var(--ink);
+  color: var(--cream);
+}
+.fall-cta p {
+  margin: 0;
+  flex-basis: 100%;
+  color: var(--ink-soft);
+  font-size: 15px;
+  font-weight: 600;
+}
