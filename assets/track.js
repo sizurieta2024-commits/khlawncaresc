@@ -50,7 +50,7 @@ window.addEventListener("load", function () {
 });
 
 (function () {
-  var CALL_CLICK = "AW-18496325629/g6iUCPn5jacdEP2P3vNE";
+  var CALL_CLICK = "AW-18496325629/NKMJCInivLEdEP2P3vNE";
   var ESTIMATE = "AW-18496325629/Gg3SCPb5jacdEP2P3vNE";
 
   function report(sendTo, callback) {
